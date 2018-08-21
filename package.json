@@ -1,0 +1,16 @@
+{
+  "name": "hero_rat_lab",
+  "version": "1.0.0",
+  "description": "",
+  "main": "hero_rat.js",
+  "dependencies": {},
+  "devDependencies": {
+    "mocha": "^5.2.0"
+  },
+  "scripts": {
+    "test": "mocha specs"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
