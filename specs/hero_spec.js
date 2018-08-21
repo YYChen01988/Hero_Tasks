@@ -2,9 +2,13 @@ const assert = require("assert");
 const Hero = require('../hero.js');
 const Food = require('../food.js')
 const Task = require('../task.js')
+const Rat = require('../rat.js')
 
 describe('Hero', function(){
   beforeEach(function(){
+
+    rat1 = new Rat(10)
+    
     task1 = new Task(20, 80, 556, 'incomplete')
     task2 = new Task(50, 40, 688, 'incomplete')
     task3 = new Task(56, 73, 856, 'complete')

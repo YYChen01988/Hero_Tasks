@@ -17,9 +17,10 @@ Hero.prototype.greet = function(){
 
 
 Hero.prototype.food_replenishment = function(food){
-  var factor = this.favFood == food.get_food_name() ? 1.5 : 1.0
+  var factor = this.favFood == food.get_food_name() ? 1.5 : 1.0 
   this.health += food.replenishment*factor
 }
+
 
 Hero.prototype.countTasks = function(){
   return this.tasks.length;
@@ -69,6 +70,10 @@ Hero.prototype.viewTaskStatus = function(return_complete = true){
     return incomplete;
   }
 }
+
+
+
+
 
 
 

@@ -4,6 +4,7 @@
 const Food = function(foodName, replenishment){
   this.foodName = foodName;
   this.replenishment = replenishment;
+  this.poisonous = false;
 }
 
 
@@ -13,6 +14,7 @@ Food.prototype.get_replenishment = function(){
 Food.prototype.get_food_name = function(){
   return this.foodName
 }
+
 
 
 
