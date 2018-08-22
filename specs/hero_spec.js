@@ -4,6 +4,8 @@ const Food = require('../food.js')
 const Task = require('../task.js')
 const Rat = require('../rat.js')
 
+let hero;
+
 describe('Hero', function(){
   beforeEach(function(){
 
@@ -20,26 +22,42 @@ describe('Hero', function(){
     hero = new Hero('Clark Kent', 80, 'Banana')
   });
 
+it("shows hero name", function(){
+  const actual = hero.heroName();
+  assert.strictEqual(actual, 'Clark Kent');
+})
+
+it("shows hero health", function(){
+  const actual = hero.heroHealth();
+  assert.strictEqual(actual, 80);
+})
+
+it("shows hero favourite food", function(){
+  const actual = hero.heroFavFood();
+  assert.strictEqual(actual, 'Banana');
+})
+
+
 it("Greet", function(){
   const actual = hero.greet();
   assert.strictEqual(actual, 'Hello, I am Clark Kent');
 })
 
 it('Health + favfood replenishment', function(){
-  hero.food_replenishment(banana);
+  hero.eatFood(banana);
   const actual =hero.health
   assert.strictEqual(actual, 110);
 })
 
 it('Health + food replenishment', function(){
-  hero.food_replenishment(apple);
+  hero.eatFood(apple);
   const actual =hero.health
   assert.strictEqual(actual, 95);
 })
 
 it('Health + poisonous food replenishment', function(){
   rat1.poisonFood(orange);
-  hero.food_replenishment(orange);
+  hero.eatFood(orange);
   const actual =hero.health
   assert.strictEqual(actual, 70);
 })

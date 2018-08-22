@@ -11,12 +11,24 @@ const Hero = function(name, health, favFood, foods){
   this.tasks = [];
 }
 
+Hero.prototype.heroName = function(){
+  return this.name;
+}
+
+Hero.prototype.heroHealth = function(){
+  return this.health;
+}
+
+Hero.prototype.heroFavFood = function(){
+  return this.favFood;
+}
+
+
 Hero.prototype.greet = function(){
   return`Hello, I am ${this.name}`;
 }
 
-
-Hero.prototype.food_replenishment = function(food){
+Hero.prototype.eatFood = function(food){
   // var factor = this.favFood == food.get_food_name() ? 1.5 : 1.0
   // this.health += food.replenishment*factor
 
@@ -30,8 +42,8 @@ Hero.prototype.food_replenishment = function(food){
   } else{
     this.health -= food.replenishment
   }
-
 }
+
 
 
 Hero.prototype.countTasks = function(){
@@ -65,9 +77,7 @@ Hero.prototype.viewTaskStatus = function(return_complete = true){
   var incomplete =[]
   var complete = []
   for ( var task_index in this.tasks){
-
     var task = this.tasks[task_index];
-
     if (task.status == 'incomplete'){
       incomplete.push(task)
     }

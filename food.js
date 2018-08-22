@@ -8,12 +8,12 @@ const Food = function(foodName, replenishment){
 }
 
 
-Food.prototype.get_replenishment = function(){
-  return this.replenishment
-}
-Food.prototype.get_food_name = function(){
-  return this.foodName
-}
+// Food.prototype.get_replenishment = function(){
+//   return this.replenishment
+// }
+// Food.prototype.get_food_name = function(){
+//   return this.foodName
+// }
 
 
 

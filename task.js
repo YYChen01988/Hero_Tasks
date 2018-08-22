@@ -10,9 +10,24 @@ const Task = function(difficulty, urgency, reward, status){
   this.status = status;
 }
 
+
+
+// Task.prototype.getDifficulty = function(){
+//   return this.difficulty;
+// }
+//
+// Task.prototype.getUrgency = function(){
+//   return this.urgency;
+// }
+//
+// Task.prototype.getReward = function(){
+//   return this.reward;
+// }
+
 Task.prototype.compelete = function(){
   this.status = "compelete";
 }
+
 
 
 

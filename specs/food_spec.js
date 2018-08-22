@@ -7,12 +7,12 @@ describe('Food', function(){
   });
 
   it("shows the food replenishment value ", function(){
-    const actual =food.get_replenishment();
+    const actual =food.replenishment;
     assert.strictEqual(actual, 80);
   });
 
   it("shows the food name", function(){
-    const actual =food.get_food_name();
+    const actual =food.foodName;
     assert.strictEqual(actual, 'Banana');
   });
 
