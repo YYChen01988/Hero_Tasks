@@ -17,8 +17,20 @@ Hero.prototype.greet = function(){
 
 
 Hero.prototype.food_replenishment = function(food){
-  var factor = this.favFood == food.get_food_name() ? 1.5 : 1.0 
-  this.health += food.replenishment*factor
+  // var factor = this.favFood == food.get_food_name() ? 1.5 : 1.0
+  // this.health += food.replenishment*factor
+
+
+  if (food.poisonous == false){
+    if (food.foodName == this.favFood){
+      this.health += ((food.replenishment)*1.5)
+    } else{
+      this.health += food.replenishment
+    }
+  } else{
+    this.health -= food.replenishment
+  }
+
 }
 
 

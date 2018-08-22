@@ -8,13 +8,14 @@ describe('Hero', function(){
   beforeEach(function(){
 
     rat1 = new Rat(10)
-    
+
     task1 = new Task(20, 80, 556, 'incomplete')
     task2 = new Task(50, 40, 688, 'incomplete')
     task3 = new Task(56, 73, 856, 'complete')
 
     apple = new Food('Apple', 15)
     banana = new Food('Banana', 20)
+    orange = new Food('Orange', 10)
 
     hero = new Hero('Clark Kent', 80, 'Banana')
   });
@@ -24,7 +25,7 @@ it("Greet", function(){
   assert.strictEqual(actual, 'Hello, I am Clark Kent');
 })
 
-it('Health + food replenishment', function(){
+it('Health + favfood replenishment', function(){
   hero.food_replenishment(banana);
   const actual =hero.health
   assert.strictEqual(actual, 110);
@@ -34,6 +35,13 @@ it('Health + food replenishment', function(){
   hero.food_replenishment(apple);
   const actual =hero.health
   assert.strictEqual(actual, 95);
+})
+
+it('Health + poisonous food replenishment', function(){
+  rat1.poisonFood(orange);
+  hero.food_replenishment(orange);
+  const actual =hero.health
+  assert.strictEqual(actual, 70);
 })
 
 it('count the number of tasks', function(){
