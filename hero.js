@@ -35,7 +35,7 @@ Hero.prototype.eatFood = function(food){
 
   if (food.poisonous == false){
     if (food.foodName == this.favFood){
-      this.health += ((food.replenishment)*1.5)
+      this.health += food.replenishment*1.5
     } else{
       this.health += food.replenishment
     }
@@ -43,7 +43,6 @@ Hero.prototype.eatFood = function(food){
     this.health -= food.replenishment
   }
 }
-
 
 
 Hero.prototype.countTasks = function(){
@@ -54,22 +53,30 @@ Hero.prototype.addTask = function(task){
   this.tasks.push(task);
 }
 
+// Hero.prototype.sortTask = function(property){
+//   this.tasks.sort(function(a, b){
+//     return a[property]-b[property];
+// });
+// }
+
+
 Hero.prototype.sortTaskByDifficulty = function(){
   this.tasks.sort(function(a, b){
-    return a.difficulty-b.difficulty
-})
+    return a.difficulty-b.difficulty;
+    // return a.[property]-b.[property];
+});
 }
 
 Hero.prototype.sortTaskByUrgency = function(){
   this.tasks.sort(function(a, b){
-    return a.urgency-b.urgency
-})
+    return a.urgency-b.urgency;
+});
 }
 
 Hero.prototype.sortTaskByReward = function(){
   this.tasks.sort(function(a, b){
-    return a.reward-b.reward
-})
+    return a.reward-b.reward;
+});
 }
 
 Hero.prototype.viewTaskStatus = function(return_complete = true){
@@ -93,6 +100,13 @@ Hero.prototype.viewTaskStatus = function(return_complete = true){
   }
 }
 
+Hero.prototype.getCompleteTasks = function(){
+  return this.tasks.filter(task => task.status == "complete")
+}
+
+Hero.prototype.getIncompleteTasks = function(){
+  return this.tasks.filter(task => task.status == "incomplete")
+}
 
 
 
